@@ -1,0 +1,9 @@
+c:\users\azhzh\documents\visual studio 2015\Projects\Perpus\Perpus\bin\Debug\Perpus.exe.config
+c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\bin\Debug\Perpus.exe
+c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\bin\Debug\Perpus.pdb
+c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.csprojResolveAssemblyReference.cache
+c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.Properties.Resources.resources
+c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.csproj.GenerateResource.Cache
+c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.exe
+c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.pdb
+c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormBook.resources
