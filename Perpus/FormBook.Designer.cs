@@ -47,6 +47,7 @@
             this.dgvMain.ReadOnly = true;
             this.dgvMain.Size = new System.Drawing.Size(257, 150);
             this.dgvMain.TabIndex = 0;
+            this.dgvMain.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvMain_CellDoubleClick);
             // 
             // label1
             // 
@@ -82,6 +83,7 @@
             this.btnUpdate.TabIndex = 4;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
