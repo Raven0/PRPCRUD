@@ -65,8 +65,8 @@ namespace Perpus
         {
             for(int i = 0; i < dgvMain.Rows.Count; i++ )
             {
-                int id = Int32.Parse(dgvMain.Rows[i].Cells[0].ToString());
-                string title = dgvMain.Rows[i].Cells[1].ToString();
+                int id = Int32.Parse(dgvMain.Rows[i].Cells[0].Value.ToString());
+                string title = dgvMain.Rows[i].Cells[1].Value.ToString();
 
                 var q = db.TableBooks.Where(x => x.BookID.Equals(id)).FirstOrDefault();
                 if(q != null)
@@ -84,11 +84,6 @@ namespace Perpus
             }
 
             loadData();
-        }
-
-        private void dgvMain_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }
