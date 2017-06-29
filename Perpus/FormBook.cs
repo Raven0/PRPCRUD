@@ -85,5 +85,26 @@ namespace Perpus
 
             loadData();
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(dgvMain.Rows[dgvMain.CurrentRow.Index].Cells[0].Value.ToString());
+
+            var q = db.TableBooks.Where(x => x.BookID.Equals(id)).FirstOrDefault();
+            if(q != null)
+            {
+                db.TableBooks.DeleteOnSubmit(q);
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+
+                }
+
+                loadData();
+            }
+        }
     }
 }
