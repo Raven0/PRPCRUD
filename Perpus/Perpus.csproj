@@ -80,6 +80,7 @@
     <Compile Include="FormWriter.Designer.cs">
       <DependentUpon>FormWriter.cs</DependentUpon>
     </Compile>
+    <Compile Include="Helper\FCrud.cs" />
     <Compile Include="linqDatabase.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
