@@ -2,11 +2,37 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="linqDatabase">
   <DataContextMoniker Name="/linqDatabaseDataContext" />
   <nestedChildShapes>
-    <classShape Id="b4e00379-3eb3-401f-b945-0152a74bfaf5" absoluteBounds="1.375, 1.25, 2, 1.1939925130208333">
-      <DataClassMoniker Name="/linqDatabaseDataContext/TableBook" />
+    <classShape Id="c62f08be-ebb3-4eeb-8f4e-154364f09195" absoluteBounds="3.5, 0.875, 2, 1.1939925130208335">
+      <DataClassMoniker Name="/linqDatabaseDataContext/TableBDetail" />
       <nestedChildShapes>
-        <elementListCompartment Id="55e096f8-1a0a-4709-bbdf-85ef88432f5a" absoluteBounds="1.3900000000000001, 1.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="2f310371-0532-4443-9089-275ed657bc9d" absoluteBounds="3.515, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="ca06cd31-f625-4c5b-9cc7-eb1371f9b430" absoluteBounds="0.75, 0.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/linqDatabaseDataContext/TableBook" />
+      <nestedChildShapes>
+        <elementListCompartment Id="3d626d73-d348-4dab-8257-aecd2b7c8718" absoluteBounds="0.765, 1.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3a4f7294-2492-43c1-968d-437fbf973a97" absoluteBounds="0.75, 3.875, 2, 1.193992513020834">
+      <DataClassMoniker Name="/linqDatabaseDataContext/TableWriter" />
+      <nestedChildShapes>
+        <elementListCompartment Id="acd5e3ce-1baf-4a34-84f9-37889d5403cb" absoluteBounds="0.765, 4.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 1.47199625651042); (3.5 : 1.47199625651042)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqDatabaseDataContext/TableBook/TableBook_TableBDetail" />
+      <nodes>
+        <classShapeMoniker Id="ca06cd31-f625-4c5b-9cc7-eb1371f9b430" />
+        <classShapeMoniker Id="c62f08be-ebb3-4eeb-8f4e-154364f09195" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 4.47199625651042); (4.5 : 4.47199625651042); (4.5 : 2.06899251302083)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/linqDatabaseDataContext/TableWriter/TableWriter_TableBDetail" />
+      <nodes>
+        <classShapeMoniker Id="3a4f7294-2492-43c1-968d-437fbf973a97" />
+        <classShapeMoniker Id="c62f08be-ebb3-4eeb-8f4e-154364f09195" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

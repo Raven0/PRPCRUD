@@ -16,7 +16,7 @@ namespace Perpus
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormBook());
+            Application.Run(new MainMenu());
         }
     }
 }

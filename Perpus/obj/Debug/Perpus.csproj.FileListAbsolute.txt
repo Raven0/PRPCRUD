@@ -7,3 +7,6 @@ c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Per
 c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.exe
 c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.pdb
 c:\Users\azhzh\Documents\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormBook.resources
+C:\Users\azhzh\documents\visual studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.MainMenu.resources
+C:\Users\azhzh\documents\visual studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormBDetail.resources
+C:\Users\azhzh\documents\visual studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormWriter.resources

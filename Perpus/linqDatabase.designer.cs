@@ -30,9 +30,15 @@ namespace Perpus
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
+    partial void InsertTableBDetail(TableBDetail instance);
+    partial void UpdateTableBDetail(TableBDetail instance);
+    partial void DeleteTableBDetail(TableBDetail instance);
     partial void InsertTableBook(TableBook instance);
     partial void UpdateTableBook(TableBook instance);
     partial void DeleteTableBook(TableBook instance);
+    partial void InsertTableWriter(TableWriter instance);
+    partial void UpdateTableWriter(TableWriter instance);
+    partial void DeleteTableWriter(TableWriter instance);
     #endregion
 		
 		public linqDatabaseDataContext() : 
@@ -65,11 +71,195 @@ namespace Perpus
 			OnCreated();
 		}
 		
+		public System.Data.Linq.Table<TableBDetail> TableBDetails
+		{
+			get
+			{
+				return this.GetTable<TableBDetail>();
+			}
+		}
+		
 		public System.Data.Linq.Table<TableBook> TableBooks
 		{
 			get
 			{
 				return this.GetTable<TableBook>();
+			}
+		}
+		
+		public System.Data.Linq.Table<TableWriter> TableWriters
+		{
+			get
+			{
+				return this.GetTable<TableWriter>();
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TableBDetail")]
+	public partial class TableBDetail : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _WriterID;
+		
+		private int _BookID;
+		
+		private EntityRef<TableBook> _TableBook;
+		
+		private EntityRef<TableWriter> _TableWriter;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnWriterIDChanging(int value);
+    partial void OnWriterIDChanged();
+    partial void OnBookIDChanging(int value);
+    partial void OnBookIDChanged();
+    #endregion
+		
+		public TableBDetail()
+		{
+			this._TableBook = default(EntityRef<TableBook>);
+			this._TableWriter = default(EntityRef<TableWriter>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WriterID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int WriterID
+		{
+			get
+			{
+				return this._WriterID;
+			}
+			set
+			{
+				if ((this._WriterID != value))
+				{
+					if (this._TableWriter.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnWriterIDChanging(value);
+					this.SendPropertyChanging();
+					this._WriterID = value;
+					this.SendPropertyChanged("WriterID");
+					this.OnWriterIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_BookID", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int BookID
+		{
+			get
+			{
+				return this._BookID;
+			}
+			set
+			{
+				if ((this._BookID != value))
+				{
+					if (this._TableBook.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnBookIDChanging(value);
+					this.SendPropertyChanging();
+					this._BookID = value;
+					this.SendPropertyChanged("BookID");
+					this.OnBookIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TableBook_TableBDetail", Storage="_TableBook", ThisKey="BookID", OtherKey="BookID", IsForeignKey=true)]
+		public TableBook TableBook
+		{
+			get
+			{
+				return this._TableBook.Entity;
+			}
+			set
+			{
+				TableBook previousValue = this._TableBook.Entity;
+				if (((previousValue != value) 
+							|| (this._TableBook.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TableBook.Entity = null;
+						previousValue.TableBDetails.Remove(this);
+					}
+					this._TableBook.Entity = value;
+					if ((value != null))
+					{
+						value.TableBDetails.Add(this);
+						this._BookID = value.BookID;
+					}
+					else
+					{
+						this._BookID = default(int);
+					}
+					this.SendPropertyChanged("TableBook");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TableWriter_TableBDetail", Storage="_TableWriter", ThisKey="WriterID", OtherKey="WriterID", IsForeignKey=true)]
+		public TableWriter TableWriter
+		{
+			get
+			{
+				return this._TableWriter.Entity;
+			}
+			set
+			{
+				TableWriter previousValue = this._TableWriter.Entity;
+				if (((previousValue != value) 
+							|| (this._TableWriter.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TableWriter.Entity = null;
+						previousValue.TableBDetails.Remove(this);
+					}
+					this._TableWriter.Entity = value;
+					if ((value != null))
+					{
+						value.TableBDetails.Add(this);
+						this._WriterID = value.WriterID;
+					}
+					else
+					{
+						this._WriterID = default(int);
+					}
+					this.SendPropertyChanged("TableWriter");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
 	}
@@ -84,6 +274,8 @@ namespace Perpus
 		
 		private string _BookTitle;
 		
+		private EntitySet<TableBDetail> _TableBDetails;
+		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
@@ -96,6 +288,7 @@ namespace Perpus
 		
 		public TableBook()
 		{
+			this._TableBDetails = new EntitySet<TableBDetail>(new Action<TableBDetail>(this.attach_TableBDetails), new Action<TableBDetail>(this.detach_TableBDetails));
 			OnCreated();
 		}
 		
@@ -139,6 +332,19 @@ namespace Perpus
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TableBook_TableBDetail", Storage="_TableBDetails", ThisKey="BookID", OtherKey="BookID")]
+		public EntitySet<TableBDetail> TableBDetails
+		{
+			get
+			{
+				return this._TableBDetails;
+			}
+			set
+			{
+				this._TableBDetails.Assign(value);
+			}
+		}
+		
 		public event PropertyChangingEventHandler PropertyChanging;
 		
 		public event PropertyChangedEventHandler PropertyChanged;
@@ -157,6 +363,132 @@ namespace Perpus
 			{
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
+		}
+		
+		private void attach_TableBDetails(TableBDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.TableBook = this;
+		}
+		
+		private void detach_TableBDetails(TableBDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.TableBook = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TableWriter")]
+	public partial class TableWriter : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _WriterID;
+		
+		private string _WriterName;
+		
+		private EntitySet<TableBDetail> _TableBDetails;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnWriterIDChanging(int value);
+    partial void OnWriterIDChanged();
+    partial void OnWriterNameChanging(string value);
+    partial void OnWriterNameChanged();
+    #endregion
+		
+		public TableWriter()
+		{
+			this._TableBDetails = new EntitySet<TableBDetail>(new Action<TableBDetail>(this.attach_TableBDetails), new Action<TableBDetail>(this.detach_TableBDetails));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WriterID", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int WriterID
+		{
+			get
+			{
+				return this._WriterID;
+			}
+			set
+			{
+				if ((this._WriterID != value))
+				{
+					this.OnWriterIDChanging(value);
+					this.SendPropertyChanging();
+					this._WriterID = value;
+					this.SendPropertyChanged("WriterID");
+					this.OnWriterIDChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_WriterName", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string WriterName
+		{
+			get
+			{
+				return this._WriterName;
+			}
+			set
+			{
+				if ((this._WriterName != value))
+				{
+					this.OnWriterNameChanging(value);
+					this.SendPropertyChanging();
+					this._WriterName = value;
+					this.SendPropertyChanged("WriterName");
+					this.OnWriterNameChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TableWriter_TableBDetail", Storage="_TableBDetails", ThisKey="WriterID", OtherKey="WriterID")]
+		public EntitySet<TableBDetail> TableBDetails
+		{
+			get
+			{
+				return this._TableBDetails;
+			}
+			set
+			{
+				this._TableBDetails.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TableBDetails(TableBDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.TableWriter = this;
+		}
+		
+		private void detach_TableBDetails(TableBDetail entity)
+		{
+			this.SendPropertyChanging();
+			entity.TableWriter = null;
 		}
 	}
 }

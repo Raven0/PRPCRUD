@@ -1,9 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbCrudTraining" Class="linqDatabaseDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=laptop-sgj17t07\sqlexpress;Initial Catalog=dbCrudTraining;Integrated Security=True" SettingsObjectName="Perpus.Properties.Settings" SettingsPropertyName="dbCrudTrainingConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TableBDetail" Member="TableBDetails">
+    <Type Name="TableBDetail">
+      <Column Name="WriterID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Association Name="TableBook_TableBDetail" Member="TableBook" ThisKey="BookID" OtherKey="BookID" Type="TableBook" IsForeignKey="true" />
+      <Association Name="TableWriter_TableBDetail" Member="TableWriter" ThisKey="WriterID" OtherKey="WriterID" Type="TableWriter" IsForeignKey="true" />
+    </Type>
+  </Table>
   <Table Name="dbo.TableBook" Member="TableBooks">
     <Type Name="TableBook">
       <Column Name="BookID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="BookTitle" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TableBook_TableBDetail" Member="TableBDetails" ThisKey="BookID" OtherKey="BookID" Type="TableBDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TableWriter" Member="TableWriters">
+    <Type Name="TableWriter">
+      <Column Name="WriterID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="WriterName" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Association Name="TableWriter_TableBDetail" Member="TableBDetails" ThisKey="WriterID" OtherKey="WriterID" Type="TableBDetail" />
     </Type>
   </Table>
 </Database>

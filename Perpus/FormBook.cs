@@ -102,9 +102,9 @@ namespace Perpus
                 {
 
                 }
-
-                loadData();
             }
+
+            loadData();
         }
     }
 }
