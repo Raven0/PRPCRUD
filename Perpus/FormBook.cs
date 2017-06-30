@@ -67,7 +67,6 @@ namespace Perpus
             {
                 int id = Int32.Parse(dgvMain.Rows[i].Cells[0].Value.ToString());
                 string title = dgvMain.Rows[i].Cells[1].Value.ToString();
-
                 var q = db.TableBooks.Where(x => x.BookID.Equals(id)).FirstOrDefault();
                 if(q != null)
                 {
@@ -78,7 +77,7 @@ namespace Perpus
                     }
                     catch (Exception ex)
                     {
-
+                        MessageBox.Show(ex.Message);
                     }
                 }
             }
@@ -100,7 +99,7 @@ namespace Perpus
                 }
                 catch (Exception ex)
                 {
-
+                    MessageBox.Show(ex.Message);
                 }
             }
 
