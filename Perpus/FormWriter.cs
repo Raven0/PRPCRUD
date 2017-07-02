@@ -31,7 +31,7 @@ namespace Perpus
             var q = db.TableWriters.ToList();
             foreach( var a in q)
             {
-                dgvMain.Rows.Add(a.WriterID, a.WriterName);
+                dgvMain.Rows.Add( a.WriterID, a.WriterName);
             }
         }
 

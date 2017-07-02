@@ -37,7 +37,7 @@ namespace Perpus
             var q = db.TableBDetails.ToList();
             foreach (var a in q)
             {
-                dgvMain.Rows.Add(a.WriterID, a.BookID);
+                dgvMain.Rows.Add(DBHelper.getWriterNameId(a.WriterID), DBHelper.getBookTitleId(a.BookID));
             }
         }
 
@@ -56,6 +56,34 @@ namespace Perpus
             {
                 MessageBox.Show(ex.Message);
                 db.TableBDetails.DeleteOnSubmit(detail);
+            }
+
+            loadData();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            for(int i = 0; i < dgvMain.Rows.Count; i++)
+            {
+
+            }
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            int id = Int32.Parse(dgvMain.Rows[dgvMain.CurrentRow.Index].Cells[0].Value.ToString());
+            var q = db.TableBDetails.Where(x => x.WriterID.Equals(id)).FirstOrDefault();
+            if(q != null)
+            {
+                db.TableBDetails.DeleteOnSubmit(q);
+                try
+                {
+                    db.SubmitChanges();
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
 
             loadData();

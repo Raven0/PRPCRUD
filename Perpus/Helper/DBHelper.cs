@@ -29,5 +29,15 @@ namespace Perpus.Helper
         {
             return db.TableBooks.Where(x => x.BookTitle.Equals(name)).Select(z => z.BookID).FirstOrDefault();
         }
+
+        public static string getWriterNameId(int id)
+        {
+            return db.TableWriters.Where(x => x.WriterID.Equals(id)).Select(z => z.WriterName).FirstOrDefault();
+        }
+
+        public static string getBookTitleId(int id)
+        {
+            return db.TableBooks.Where(x => x.BookID.Equals(id)).Select(z => z.BookTitle).FirstOrDefault();
+        }
     }
 }
