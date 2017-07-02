@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Perpus.Helper;
+using Perpus.Views;
 
 namespace Perpus
 {
@@ -63,10 +64,11 @@ namespace Perpus
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < dgvMain.Rows.Count; i++)
-            {
+            int WriterId = DBHelper.getWriterId(dgvMain.Rows[dgvMain.CurrentRow.Index].Cells[0].Value.ToString());
+            int BookId = DBHelper.getBookId(dgvMain.Rows[dgvMain.CurrentRow.Index].Cells[1].Value.ToString());
 
-            }
+            Update up = new Update(WriterId, BookId);
+            up.ShowDialog();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)

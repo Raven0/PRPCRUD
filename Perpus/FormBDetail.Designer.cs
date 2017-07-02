@@ -34,7 +34,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.dgvMain = new System.Windows.Forms.DataGridView();
             this.btnCreate = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvMain)).BeginInit();
             this.SuspendLayout();
@@ -98,15 +98,15 @@
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
-            // btnUpdate
+            // btnEdit
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(96, 246);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(75, 23);
-            this.btnUpdate.TabIndex = 6;
-            this.btnUpdate.Text = "UPDATE";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.btnEdit.Location = new System.Drawing.Point(96, 246);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnEdit.TabIndex = 6;
+            this.btnEdit.Text = "EDIT";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // btnDelete
             // 
@@ -124,7 +124,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 281);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnUpdate);
+            this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnCreate);
             this.Controls.Add(this.dgvMain);
             this.Controls.Add(this.cbBook);
@@ -147,7 +147,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridView dgvMain;
         private System.Windows.Forms.Button btnCreate;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
     }
 }
