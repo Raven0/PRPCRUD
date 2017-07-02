@@ -71,7 +71,7 @@ namespace Perpus
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int id = Int32.Parse(dgvMain.Rows[dgvMain.CurrentRow.Index].Cells[0].Value.ToString());
+            int id = DBHelper.getWriterId(dgvMain.Rows[dgvMain.CurrentRow.Index].Cells[0].Value.ToString());
             var q = db.TableBDetails.Where(x => x.WriterID.Equals(id)).FirstOrDefault();
             if(q != null)
             {
