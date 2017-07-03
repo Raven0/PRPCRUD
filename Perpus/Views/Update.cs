@@ -13,6 +13,8 @@ namespace Perpus.Views
 {
     public partial class Update : Form
     {
+        linqDatabaseDataContext db = new linqDatabaseDataContext();
+
         public Update(int WriterId, int BookId)
         {
             InitializeComponent();
@@ -28,12 +30,13 @@ namespace Perpus.Views
 
         private void btnUp_Click(object sender, EventArgs e)
         {
-            int id = DBHelper.getWriterId(dgvMain.Rows[dgvMain.CurrentRow.Index].Cells[0].Value.ToString());
-            string title = dgvMain.Rows[i].Cells[1].Value.ToString();
-            var q = db.TableWriters.Where(x => x.WriterID.Equals(id)).FirstOrDefault();
+            int writerId = DBHelper.getWriterId(cbWriter.Text);
+            int bookId = DBHelper.getBookId(cbBook.Text);
+            var q = db.TableBDetails.Where(x => x.WriterID.Equals(writerId)).FirstOrDefault();
             if (q != null)
             {
-                q.WriterName = title;
+                q.WriterID = writerId;
+                q.BookID = bookId;
                 try
                 {
                     db.SubmitChanges();
