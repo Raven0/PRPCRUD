@@ -11,3 +11,16 @@ C:\Users\azhzh\documents\visual studio 2015\Projects\Perpus\Perpus\obj\Debug\Per
 C:\Users\azhzh\documents\visual studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormBDetail.resources
 C:\Users\azhzh\documents\visual studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormWriter.resources
 C:\Users\azhzh\documents\visual studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.Views.Update.resources
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\bin\Debug\Perpus.exe.config
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\bin\Debug\Perpus.exe
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\bin\Debug\Perpus.pdb
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.csprojResolveAssemblyReference.cache
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.Views.Update.resources
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormBDetail.resources
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormBook.resources
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.FormWriter.resources
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.MainMenu.resources
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.Properties.Resources.resources
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.csproj.GenerateResource.Cache
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.exe
+X:\PROJECT\Desktop\C#\Visual Studio 2015\Projects\Perpus\Perpus\obj\Debug\Perpus.pdb
